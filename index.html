@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rafael | Personal Trainer em São Paulo</title>
+  <meta name="description" content="Personal trainer certificado em São Paulo com 8+ anos de experiência. Hipertrofia, emagrecimento e condicionamento físico. Agende sua aula gratuita!" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="#inicio" class="navbar__logo">Rafael</a>
+
+      <nav class="navbar__links">
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#horarios">Horários</a>
+        <a href="#depoimentos">Depoimentos</a>
+      </nav>
+
+      <button class="btn btn--whatsapp btn--sm" onclick="openWhatsApp()">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
+      </button>
+
+      <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#sobre" onclick="closeMenu()">Sobre</a>
+      <a href="#servicos" onclick="closeMenu()">Serviços</a>
+      <a href="#horarios" onclick="closeMenu()">Horários</a>
+      <a href="#depoimentos" onclick="closeMenu()">Depoimentos</a>
+      <button class="btn btn--whatsapp" onclick="openWhatsApp(); closeMenu()">WhatsApp</button>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="inicio">
+    <div class="hero__bg"></div>
+    <div class="hero__overlay"></div>
+    <div class="container hero__content">
+      <div class="badge">
+        <span class="badge__dot"></span>
+        Personal Trainer Certificado
+      </div>
+      <h1 class="hero__name">Rafael</h1>
+      <p class="hero__tagline">
+        Transformações reais para pessoas reais.
+        <strong>Seu corpo. Sua evolução. Sua vida.</strong>
+      </p>
+      <div class="hero__credentials">
+        <span>CREF 012345-G/SP</span>
+        <span>Especialista em Hipertrofia</span>
+        <span>8+ Anos de Experiência</span>
+      </div>
+      <div class="hero__ctas">
+        <button class="btn btn--whatsapp btn--lg" onclick="openWhatsApp('Olá! Vi seu site e gostaria de agendar uma aula experimental. 💪')">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Quero minha aula grátis
+        </button>
+        <a href="#horarios" class="btn btn--outline btn--lg">Ver Horários Disponíveis</a>
+      </div>
+    </div>
+    <div class="hero__scroll">
+      <span>Role para baixo</span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+    </div>
+  </section>
+
+  <!-- ===== STATS ===== -->
+  <section class="stats">
+    <div class="container stats__grid">
+      <div class="stat"><div class="stat__value text-gradient">8+</div><div class="stat__label">Anos de Experiência</div></div>
+      <div class="stat"><div class="stat__value text-gradient">500+</div><div class="stat__label">Alunos Transformados</div></div>
+      <div class="stat"><div class="stat__value text-gradient">98%</div><div class="stat__label">Taxa de Satisfação</div></div>
+      <div class="stat"><div class="stat__value text-gradient">3</div><div class="stat__label">Certificações Internacionais</div></div>
+    </div>
+  </section>
+
+  <!-- ===== SOBRE ===== -->
+  <section class="about" id="sobre">
+    <div class="container about__grid">
+      <div class="about__text">
+        <p class="section-label">Sobre mim</p>
+        <h2>Quem é o<br><span class="text-gradient">Rafael?</span></h2>
+        <p>Sou personal trainer há mais de <strong>8 anos</strong>, especializado em transformações corporais reais. Minha metodologia combina ciência do treinamento com acompanhamento personalizado para garantir resultados duradouros.</p>
+        <p>Acredito que cada pessoa é única. Por isso, cada treino é desenvolvido de acordo com seus objetivos, limitações e rotina. Do emagrecimento ao ganho de massa muscular, estou aqui para guiar cada passo da sua jornada.</p>
+        <div class="tags">
+          <span class="tag">Hipertrofia</span>
+          <span class="tag">Emagrecimento</span>
+          <span class="tag">Condicionamento Físico</span>
+          <span class="tag">Treino Funcional</span>
+          <span class="tag">Reabilitação</span>
+        </div>
+      </div>
+      <div class="about__cards">
+        <div class="card"><div class="card__icon">🎓</div><h3>CREF Ativo</h3><p>Conselho Regional de Educação Física — SP</p></div>
+        <div class="card"><div class="card__icon">🏋️</div><h3>Especialista em Musculação</h3><p>Hipertrofia e Emagrecimento</p></div>
+        <div class="card"><div class="card__icon">🥗</div><h3>Nutrição Esportiva</h3><p>Formação complementar — UNICAMP</p></div>
+        <div class="card"><div class="card__icon">🧠</div><h3>Coach de Performance</h3><p>Certificação Internacional NSCA</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVIÇOS ===== -->
+  <section class="services" id="servicos">
+    <div class="container">
+      <p class="section-label text-center">Serviços</p>
+      <h2 class="text-center">O que eu <span class="text-gradient">ofereço</span></h2>
+      <div class="services__grid">
+        <div class="service-card">
+          <div class="service-card__icon">🏋️‍♂️</div>
+          <h3>Personal Presencial</h3>
+          <p>Treinos 100% personalizados com acompanhamento em tempo real. Ideal para máxima evolução e segurança nos exercícios.</p>
+          <div class="service-card__footer">
+            <span class="price">A partir de R$ 120/hora</span>
+            <button class="btn btn--outline btn--sm" onclick="openWhatsApp('Olá! Tenho interesse no serviço de Personal Presencial.')">Tenho Interesse</button>
+          </div>
+        </div>
+        <div class="service-card service-card--highlight">
+          <div class="service-card__badge">Mais Popular</div>
+          <div class="service-card__icon">📱</div>
+          <h3>Assessoria Online</h3>
+          <p>Planilha de treino + acompanhamento via WhatsApp. Flexibilidade para treinar em qualquer lugar, no seu ritmo.</p>
+          <div class="service-card__footer">
+            <span class="price">A partir de R$ 299/mês</span>
+            <button class="btn btn--primary btn--sm" onclick="openWhatsApp('Olá! Tenho interesse na Assessoria Online.')">Tenho Interesse</button>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon">👥</div>
+          <h3>Treino em Dupla</h3>
+          <p>Personal para você e mais um amigo. Mesma qualidade, mais motivação e um custo mais acessível.</p>
+          <div class="service-card__footer">
+            <span class="price">A partir de R$ 180/hora</span>
+            <button class="btn btn--outline btn--sm" onclick="openWhatsApp('Olá! Tenho interesse no Treino em Dupla.')">Tenho Interesse</button>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon">🎯</div>
+          <h3>Consultoria Avulsa</h3>
+          <p>Avaliação física completa, bioimpedância e montagem de programa de treino personalizado para guia próprio.</p>
+          <div class="service-card__footer">
+            <span class="price">R$ 350 (único)</span>
+            <button class="btn btn--outline btn--sm" onclick="openWhatsApp('Olá! Tenho interesse na Consultoria Avulsa.')">Tenho Interesse</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HORÁRIOS ===== -->
+  <section class="schedule" id="horarios">
+    <div class="container">
+      <p class="section-label text-center">Agenda</p>
+      <h2 class="text-center">Horários <span class="text-gradient">Disponíveis</span></h2>
+      <p class="schedule__subtitle">Selecione o dia da semana e veja os horários disponíveis. Clique em um horário para agendar via WhatsApp.</p>
+
+      <div class="schedule__tabs">
+        <button class="tab-btn active" onclick="selectDay(0, this)">SEG</button>
+        <button class="tab-btn" onclick="selectDay(1, this)">TER</button>
+        <button class="tab-btn" onclick="selectDay(2, this)">QUA</button>
+        <button class="tab-btn" onclick="selectDay(3, this)">QUI</button>
+        <button class="tab-btn" onclick="selectDay(4, this)">SEX</button>
+        <button class="tab-btn" onclick="selectDay(5, this)">SAB</button>
+      </div>
+
+      <div class="schedule__panel card">
+        <div class="schedule__header">
+          <h3 id="dayTitle">Segunda</h3>
+          <div class="schedule__legend">
+            <span><span class="dot dot--green"></span> Disponível</span>
+            <span><span class="dot dot--gray"></span> Ocupado</span>
+          </div>
+        </div>
+        <div class="schedule__slots" id="slotsGrid"></div>
+        <p class="schedule__hint">💬 Ao clicar em um horário disponível, você será redirecionado para o WhatsApp para confirmar o agendamento.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DEPOIMENTOS ===== -->
+  <section class="testimonials" id="depoimentos">
+    <div class="container">
+      <p class="section-label text-center">Depoimentos</p>
+      <h2 class="text-center">Resultados <span class="text-gradient">Reais</span></h2>
+      <div class="testimonials__grid">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"O Carlos mudou minha vida! Nunca pensei que conseguiria emagrecer de forma saudável e sem sofrimento. O acompanhamento dele é incrível!"</p>
+          <div class="result-badge">🏆 Perdi 18kg em 6 meses</div>
+          <div class="testimonial-author"><div class="avatar">MC</div><span>Mariana Costa</span></div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"Profissional excepcional. Os treinos são intensos mas seguros. Em 4 meses já vejo resultados que nunca consegui em 2 anos treinando sozinho."</p>
+          <div class="result-badge">🏆 Ganhei 8kg de massa muscular</div>
+          <div class="testimonial-author"><div class="avatar">RS</div><span>Rafael Souza</span></div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"Me preparei para minha primeira corrida de rua com o Carlos. Ele é atencioso, dedicado e realmente se importa com a sua evolução."</p>
+          <div class="result-badge">🏆 Condicionamento físico total</div>
+          <div class="testimonial-author"><div class="avatar">FL</div><span>Fernanda Lima</span></div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"Depois da cirurgia no joelho, o Carlos me ajudou a recuperar minha mobilidade e força. Hoje treino melhor do que antes da lesão!"</p>
+          <div class="result-badge">🏆 Reabilitação pós-cirurgia</div>
+          <div class="testimonial-author"><div class="avatar">BA</div><span>Bruno Alves</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="cta">
+    <div class="container">
+      <div class="cta__box card">
+        <p class="section-label text-center">Comece hoje mesmo</p>
+        <h2 class="text-center">Pronto para <span class="text-gradient">mudar?</span></h2>
+        <p class="cta__text">A primeira aula é <strong>totalmente gratuita</strong>. Sem compromisso. Basta entrar em contato e agendar o seu horário.</p>
+        <button class="btn btn--whatsapp btn--xl" onclick="openWhatsApp('Olá Carlos! Gostaria de agendar minha aula gratuita. 💪')">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Agendar aula grátis no WhatsApp
+        </button>
+        <p class="cta__note">Resposta em até 1 hora • Sem spam • Cancele quando quiser</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>
+        <div class="footer__logo text-gradient">Rafael</div>
+        <p>Personal Trainer Certificado — CREF 012345-G/SP</p>
+        <p>São Paulo — SP</p>
+      </div>
+      <nav class="footer__nav">
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#horarios">Horários</a>
+        <a href="#depoimentos">Depoimentos</a>
+      </nav>
+      <button class="btn btn--whatsapp" onclick="openWhatsApp()">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
+      </button>
+    </div>
+    <div class="footer__copy">
+      © <span id="year"></span> Rafael Personal Trainer. Todos os direitos reservados.
+    </div>
+  </footer>
+
+  <!-- ===== BOTÃO FLUTUANTE WHATSAPP ===== -->
+  <button class="floating-whatsapp" onclick="openWhatsApp()" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <span class="floating-whatsapp__ring"></span>
+  </button>
+
+  <script>
+    /* ===== CONFIGURAÇÃO — altere aqui ===== */
+    const WHATSAPP_NUMBER = '5512991399473'; // ← atualizado para +55 12 99139-9473
+    const DEFAULT_MSG = 'Olá! Vi seu site e gostaria de saber mais sobre seus treinos. 💪';
+
+    function openWhatsApp(msg = DEFAULT_MSG) {
+      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
+    }
+
+    /* ===== NAVBAR SCROLL ===== */
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').classList.toggle('navbar--scrolled', window.scrollY > 40);
+    });
+
+    /* ===== MENU MOBILE ===== */
+    function toggleMenu() {
+      document.getElementById('mobileMenu').classList.toggle('open');
+      document.getElementById('hamburger').classList.toggle('open');
+    }
+    function closeMenu() {
+      document.getElementById('mobileMenu').classList.remove('open');
+      document.getElementById('hamburger').classList.remove('open');
+    }
+
+    /* ===== ANO FOOTER ===== */
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    /* ===== HORÁRIOS ===== */
+    const schedule = [
+      { day: 'Segunda', slots: [
+        { time: '06:00', ok: true }, { time: '07:00', ok: false },
+        { time: '08:00', ok: true }, { time: '09:00', ok: false },
+        { time: '17:00', ok: true }, { time: '18:00', ok: false },
+        { time: '19:00', ok: true }, { time: '20:00', ok: true }
+      ]},
+      { day: 'Terça', slots: [
+        { time: '06:00', ok: false }, { time: '07:00', ok: true },
+        { time: '08:00', ok: true },  { time: '09:00', ok: true },
+        { time: '17:00', ok: false }, { time: '18:00', ok: true },
+        { time: '19:00', ok: false }, { time: '20:00', ok: true }
+      ]},
+      { day: 'Quarta', slots: [
+        { time: '06:00', ok: true },  { time: '07:00', ok: true },
+        { time: '08:00', ok: false }, { time: '09:00', ok: false },
+        { time: '17:00', ok: true },  { time: '18:00', ok: true },
+        { time: '19:00', ok: true },  { time: '20:00', ok: false }
+      ]},
+      { day: 'Quinta', slots: [
+        { time: '06:00', ok: false }, { time: '07:00', ok: false },
+        { time: '08:00', ok: true },  { time: '09:00', ok: true },
+        { time: '17:00', ok: true },  { time: '18:00', ok: false },
+        { time: '19:00', ok: true },  { time: '20:00', ok: true }
+      ]},
+      { day: 'Sexta', slots: [
+        { time: '06:00', ok: true },  { time: '07:00', ok: true },
+        { time: '08:00', ok: true },  { time: '09:00', ok: false },
+        { time: '17:00', ok: false }, { time: '18:00', ok: true },
+        { time: '19:00', ok: true },  { time: '20:00', ok: false }
+      ]},
+      { day: 'Sábado', slots: [
+        { time: '07:00', ok: true },  { time: '08:00', ok: true },
+        { time: '09:00', ok: false }, { time: '10:00', ok: true },
+        { time: '11:00', ok: true }
+      ]},
+    ];
+
+    function selectDay(index, btn) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderSlots(index);
+    }
+
+    function renderSlots(index) {
+      const d = schedule[index];
+      document.getElementById('dayTitle').textContent = d.day;
+      const grid = document.getElementById('slotsGrid');
+      grid.innerHTML = d.slots.map(s => {
+        if (s.ok) {
+          return `<button class="slot slot--available" onclick="openWhatsApp('Olá! Gostaria de agendar um treino para ${d.day} às ${s.time}. Está disponível?')">${s.time}<span class="slot__dot"></span></button>`;
+        }
+        return `<button class="slot slot--busy" disabled>${s.time}</button>`;
+      }).join('');
+    }
+
+    renderSlots(0);
+  </script>
+</body>
+</html>

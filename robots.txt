@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Diretórios ou arquivos específicos podem ser bloqueados se necessário:
+# Disallow: /private/
+# Disallow: /admin/
+
+# Sitemap
+Sitemap: https://seu-dominio.com/sitemap.xml
